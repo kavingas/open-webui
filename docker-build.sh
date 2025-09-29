@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default values
-DEFAULT_VERSION="0.6.30"
+DEFAULT_VERSION="0.6.31"
 DEFAULT_PUSH="false"
 
 # Parse command line arguments
@@ -27,11 +27,11 @@ PUSH="$DEFAULT_PUSH"
 
 while [[ $# -gt 0 ]]; do
     case $1 in
-        -V)
+        --version)
             VERSION="$2"
             shift 2
             ;;
-        -P)
+        --push)
             PUSH="true"
             shift
             ;;

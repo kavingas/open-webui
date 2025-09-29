@@ -7,6 +7,7 @@ services:
       - WEBUI_JWT_SECRET_KEY=${WEBUI_JWT_SECRET_KEY:-H7-buoZ75tANPaTzbbM6jpK4IJEQpIZ5HY3C4n5Hty4=}
       - WEBUI_NAME=${WEBUI_NAME:-Sauron AI}
       - WEBUI_DESCRIPTION=${WEBUI_DESCRIPTION:-Advanced AI Assistant}
+      - OPENWEBUI_STREAM=false
     volumes:
     - .:/app
     working_dir: /app
@@ -19,6 +20,7 @@ services:
   backend:
     image: python:3.11-slim-bookworm
     environment:
+      - OPENWEBUI_STREAM=false
       - OLLAMA_BASE_URL=http://host.docker.internal:11434
       - UVICORN_WORKERS=5
       - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY:-H7-buoZ75tANPaTzbbM6jpK4IJEQpIZ5HY3C4n5Hty4=}
