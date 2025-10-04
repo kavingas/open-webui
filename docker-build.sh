@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default values
-DEFAULT_VERSION="0.6.31"
+DEFAULT_VERSION="0.6.9"
 DEFAULT_PUSH="false"
 
 # Parse command line arguments
